@@ -1,0 +1,28 @@
+{
+  "name": "welltag",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.19.1",
+    "body-parser": "^1.19.0",
+    "datatable": "^2.0.2",
+    "datatables.net": "^1.10.20",
+    "ejs": "^3.0.1",
+    "express": "^4.17.1",
+    "express-ejs-layouts": "^2.5.0",
+    "fs": "^0.0.1-security",
+    "http": "^0.0.0",
+    "jquery": "^3.4.1",
+    "jquery-ui": "^1.12.1",
+    "jquery-ui-dist": "^1.12.1",
+    "moment": "^2.24.0",
+    "mqtt": "^3.0.0",
+    "mysql": "^2.17.1"
+  }
+}

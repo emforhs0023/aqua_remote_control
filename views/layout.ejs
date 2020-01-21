@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        
+        <script type="text/javascript" src="/js/moment.js"></script>
+        <script type="text/javascript" src="/js/axios.js"></script>
+        <link rel="stylesheet" href="/static/css/main.css" />
+        <style type="text/css">
+            *{ margin: 0px; padding: 0px; }
+            a{ color: black; text-decoration: none; }
+            header{ margin-top: 50px; }
+            .headerMenuList{ width: 20%; display: inline-block;}
+            .container{ clear: both; padding: 50px; }
+            #controlMenu{ margin-right: 20px; }
+            #pumpMenu{ margin-left: 20px; }
+            li{ list-style: none }
+            .mainListName{color: #fff; background-color: #6c757d; border-color: #6c757d; border: 1px solid transparent; padding: .375rem .75rem; font-size: 1rem; line-height: 1.5; border-radius: .25rem;     font-weight: 400; text-align: center; font-size: 20px; font-weight: 700;}
+            .mainListName:hover { color: #fff; background-color: #5a6268; border-color: #5a6268; }
+        </style>
+    </head>
+    <body>
+        <div id="wrapper">
+            <header>
+                <ul style="text-align: center;">
+                    <a href="/" class="headerMenuList" id="controlMenu"><li class="mainListName">Control</li></a>
+                    <!-- <a href="/2" class="headerMenuList" id="pumpMenu"><li class="mainListName">Pump</li></a> -->
+                </ul>
+            </header> 
+            <main>
+                <div class="container" >
+                    <%- body %>
+                </div>
+            </main>
+            <footer>
+                <div class="row">
+                    <!-- footer -->
+                </div>
+            </footer>
+            <%- script %>
+        </div>
+    </body>
+</html>
+

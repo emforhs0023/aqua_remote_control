@@ -1,0 +1,147 @@
+<script type="text/javascript">
+    dataInfoYo = null
+    timerId = null;
+    addId = []
+    confirmArray = []
+    uId =["all", "0x01", "0x02", "0x03", "0x04", "0x05", "0x06", "0x07", "0x08", "0x09"]
+    action =[0,1,2,3,4,5,6,7,8,9]
+    acrionAllData = ["5","6","7","8","9"]
+    type =["control"]
+    part =["tema", "color"]
+
+    for(var i = 0; i < type.length; i++){
+        $("#selectType").append("<option value="+type+">"+type+"</option>")
+    }
+    for(var i = 0; i < uId.length; i++){
+        $("#selectUid").append("<option value="+uId[i]+">"+uId[i]+"</option>")
+    }
+    for(var i = 0; i < part.length; i++){
+        $("#selectPart").append("<option value="+part[i]+">"+part[i]+"</option>")
+    }
+    for(var i = 0; i < acrionAllData.length; i++){
+        $("#selectActionAll").append("<option value="+acrionAllData[i]+">"+acrionAllData[i]+"</option>")
+    }
+
+    // const loopTest = async () => {
+        
+    //     /*************************************************** 정지 데이터 ****************************************************/ 
+    //      // async await
+    //     const dataInfoStop = {"header":"control", "uid":"all", "sub": {"action": 5, "part": "tema"}}
+
+    //     axios.post("/dataInfo1", dataInfoStop)
+    //     .then(res => {
+            
+    //     })
+    //     .catch(err => {
+    //         console.log(err);
+    //     })
+    //     const type = dataInfoYo.header
+    //     const uId = dataInfoYo.uid
+    //     const part = dataInfoYo.sub.part
+    //     const action = dataInfoYo.sub.action
+        
+    //     // console.log(uId)
+    //     // console.log(part)
+    //     const dataInfo = {"header":type, "uid":uId, "sub": {"action": action, "part": part}}
+
+        
+    //     setTimeOver = setTimeout(() => {
+
+    //         axios.post("/dataInfo1", dataInfo)
+    //         .then(res => {
+
+    //         })
+    //         .catch(err => {
+    //             console.log(err);
+    //         })
+    //     }, 2000);
+    // }
+
+    const clickSendData = () => {
+        
+        const type = $("#selectType").val()
+        const uId = $("#selectUid").val()
+        const part = $("#selectPart").val()
+        const action = $("#selectActionAll").val()
+
+        let dataInfo = {"header":type, "uid":uId, "sub": {"action": action, "part": part}, "on" : 1}
+    
+        // console.log(dataInfo)
+        
+        axios.post("/dataInfo1", dataInfo)
+            .then(res => {
+            })
+            .catch(err => {
+            console.log(err);
+            })
+        // timerId = setInterval(loopTest, 5000)
+    }
+    const clickSendStop = () => {
+        let dataInfo1 = {"header":type, "uid":uId, "sub": {"action": action, "part": part}, "on" : 0}
+        axios.post("/dataInfo1", dataInfo1)
+            .then(res => {
+            })
+            .catch(err => {
+            console.log(err);
+            })
+        alert("정지 되었습니다.")
+    }
+</script>
+
+<div>
+    <input type="hidden" id="headerHid" value="">
+    <input type="hidden" id="uIdHid" value="">
+    <input type="hidden" id="partHid" value="">
+    <input type="hidden" id="actionHid" value="">
+    <h1 style="text-align: center;">Control</h1>
+    <div class="selectZoon">
+        <h1>Type Of Control </h1>
+        <select id = "selectType" class="selectBox" onChange="typeChange()"> </select>
+    </div >
+    <div class="selectZoon">
+        <h1>uID</h1>
+        <select id = "selectUid" class="selectBox" onChange="uidChange()"> </select>
+    </div>
+    
+    <div class="selectZoon" id ="partControlZoon">
+        <h1>Part</h1>
+        <select id = "selectPart" class="selectBox" onChange="partChange()"> </select>
+    </div>
+    
+    <!-- <div class="selectZoon" id ="notAllZoon">
+        <h1>Part</h1>
+        <select id = "selectColor" class="selectBox"> 
+            <option value="color">color</option>
+        </select>
+    </div> -->
+
+    <div class="selectZoon" id ="partColor">
+        <h1>Action</h1>
+        <select id = "selectActionAll" class="selectBox"> </select>
+    </div>
+    
+   <!--  <div class="selectZoon" id ="notAllSelect">
+        <h1>Action</h1>
+        <select id = "notAll" class="selectBox" > </select>
+    </div>
+ -->
+    
+    <div id="addIdList">
+        <p style="float: left; line-height: 2;">추가된 아이디 : </p> 
+        <ul id="confirmArray">
+        </ul>
+    </div>
+    <div id="clickData">
+        <ul>
+            <li class="pageSubmitButtonLi">
+                <button onClick=clickAdd() class="dataPushButton" id="addButton">같이 처리 할 ID 추가</button>
+            </li>
+            <li class="pageSubmitButtonLi">
+                <button onClick=clickSendData() class="dataPushButton" id="sendButton">보내기</button>
+            </li>
+            <li class="pageSubmitButtonLi">
+                <button onClick=clickSendStop() class="dataPushButton" id="stopButton">정지</button>
+            </li>
+        </ul>
+    </div>
+</div>

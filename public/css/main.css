@@ -1,0 +1,47 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+#mainContent{
+    margin-top: 20px;
+}
+.tableArea {
+    width: 100%;
+    background-color: #dddddd;
+    overflow: hidden;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+.tableTitle {
+    float: left;
+    font-size: 25px;
+    color: black;
+    font-weight: 700;
+    margin-left: 10px;
+}
+.inputArea {
+    float: right;
+    margin-right: 30px;
+    padding-top: 2px;
+}
+.inputObj {
+    float: left;
+    height: 25px;
+    cursor:pointer;
+}
+input[type='text'] {
+    box-sizing: border-box;
+}
+input[type='button'] {
+    width: 50px;
+}
+td {
+    width: 105px;
+}
+.delete_btn{
+    cursor:pointer;
+}
+.delete_btn:hover {
+    background-color: black;
+    color: white;
+}
