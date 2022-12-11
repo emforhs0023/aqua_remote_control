@@ -14,7 +14,7 @@
     "datatable": "^2.0.2",
     "datatables.net": "^1.10.20",
     "ejs": "^3.0.1",
-    "express": "^4.17.1",
+    "express": "^4.17.3",
     "express-ejs-layouts": "^2.5.0",
     "fs": "^0.0.1-security",
     "http": "^0.0.0",
